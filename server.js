@@ -10,21 +10,21 @@ const app = express();
 dotenv.config();
 // app.use(cors());
 
-const dirname = path.resolve();
-console.log(dirname);
-console.log(path.join(dirname, "..", 'amazone-clone', 'build'))
+// const dirname = path.resolve();
+// console.log(dirname);
+// console.log(path.join(dirname, "..", 'amazone-clone', 'build'))
 
-// const secrete_key = process.env.STRIPE_SECRET;
-// const stripe = new Stripe(`${secrete_key}`);
+// // const secrete_key = process.env.STRIPE_SECRET;
+// // const stripe = new Stripe(`${secrete_key}`);
 
 
-// to serve the frontend 
-app.use(express.static(path.join(dirname,'..', 'amazone-clone/build')));
+// // to serve the frontend 
+// app.use(express.static(path.join(dirname,'..', 'amazone-clone/build')));
 
-// to redirect any routes to index.html since all the frontend route is inside index
-app.get('*', (req, res)=>{
-    res.sendFile(path.join(dirname, '..', 'amazone-clone', 'build', 'index.html'))
-})
+// // to redirect any routes to index.html since all the frontend route is inside index
+// app.get('*', (req, res)=>{
+//     res.sendFile(path.join(dirname, '..', 'amazone-clone', 'build', 'index.html'))
+// })
 
 // dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
